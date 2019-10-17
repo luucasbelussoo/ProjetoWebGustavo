@@ -15,7 +15,7 @@
 				<ul class="dropdown-menu">
 					<li><a href="../Estado/EstadoServlet">Estado</a></li>
 					<li><a href="../Cidade/CidadeServlet">Cidade</a></li>
-					<li><a href="#">Usuários</a></li>
+					<li><a href="../Usuario/UsuarioServlet">Usuários</a></li>
 					<li class="divider"></li>
 					<li class="dropdown-header">Outros Cadastros</li>
 					<li><a href="#">Básicos<span class="caret"></span></a>

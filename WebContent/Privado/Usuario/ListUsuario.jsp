@@ -5,44 +5,54 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Lista de Estados</title>
+<title>Lista de Usuários</title>
 <jsp:include page="../Fragmentos/Recursos.jspf"></jsp:include>
 </head>
 <body>
 	<jsp:include page="../Fragmentos/Cabecalho.jspf"></jsp:include>
 	
 	<div class="container">
-		<h2>Manutenção de Estados</h2>
-		<a href="EstadoServlet?oper=novo" class="btn btn-info pull-right" title="Novo">Novo</a>	
+		<h2>Manutenção de Usuarios</h2>
+		<a href="UsuarioServlet?oper=novo" class="btn btn-info pull-right" title="Novo">Novo</a>	
 		<p>${requestScope.erro}</p>	
 		
 		<table id="example" class="table table-bordered table-hover">
 			<thead>
 				<th>#</th>
 				<th>Nome</th>
-				<th>UF</th>
+				<th>Login</th>
+				<th>Endereco</th>
+				<th>Telefone</th>
+				<th>CPF</th>
+				<th>Cidade</th>
 				<th>Alterar</th>
 				<th>Excluir</th>
 
 			</thead>
 
-			<c:forEach var="estado" items="${sessionScope.estados}"
+			<c:forEach var="usuario" items="${sessionScope.usuarios}"
 				varStatus="status">
 				<tr>
-					<td>${estado.id}</td>
-					<td>${estado.nome}</td>
-					<td>${estado.UF}</td>
+					<td>${usuario.id}</td>
+					<td>${usuario.nome}</td>
+					<td>${usuario.login}</td>
+					<td>${usuario.endereco}</td>
+					<td>${usuario.telefone}</td>
+					<td>${usuario.cpf}</td>
+					<td>${usuario.cidade.nome}</td> <!-- iMPORTANTE-->
+					
 					<td align="center">
 					    <input type="button" value="Alterar" class="btn btn-info pull-center"
-						onclick="location='EstadoServlet?oper=alterar&id=${estado.id}';">
+						onclick="location='UsuarioServlet?oper=alterar&id=${usuario.id}';">
 					</td>
 					<td align="center">
 					    <input type="button" value="Excluir" class="btn btn-danger pull-center" 
-						onclick="if (confirm('Confirma exclusão?')) location='EstadoServlet?oper=excluir&id=${estado.id}';">
+						onclick="if (confirm('Confirma exclusão?')) location='UsuarioServlet?oper=excluir&id=${usuario.id}';">
 
 					</td>
 				</tr>
 			</c:forEach>
+
 
 		</table>
 	</div>
