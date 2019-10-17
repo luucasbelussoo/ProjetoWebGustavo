@@ -1,0 +1,15 @@
+ <!-- Bootstrap -->
+ <link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <!-- Estilos personalizados da página -->
+ <link href="../../resources/estilos.css" rel="stylesheet">
+ <!-- jQuery (necessário para os plugins Javascript do Bootstrap) -->
+ <script src="../../resources/jquery.min.js"></script>
+ <!-- Incluir plugins do Bootstrap -->
+ <script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
+ 
+<!-- SmartMenus jQuery Bootstrap Addon CSS -->
+<link href="../../resources/smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="../../resources/smartmenus/jquery.smartmenus.js"></script>
+<!-- SmartMenus jQuery Bootstrap Addon -->
+<script type="text/javascript" src="../../resources/smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.js"></script>
