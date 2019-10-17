@@ -13,8 +13,8 @@
 			<li><a href="#">Home</a></li>
 			<li><a href="#">Cadastros<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="../Doenca/DoencaServlet">Estado</a></li>
-					<li><a href="../Paciente/PacienteServlet">Cidade</a></li>
+					<li><a href="../Estado/EstadoServlet">Estado</a></li>
+					<li><a href="../Cidade/CidadeServlet">Cidade</a></li>
 					<li><a href="#">Usuários</a></li>
 					<li class="divider"></li>
 					<li class="dropdown-header">Outros Cadastros</li>
@@ -39,9 +39,6 @@
 			<li class="active"><a href="#">Contato</a></li>
 			<li><a href="#">Informações <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="#">Item 1</a></li>
-					<li><a href="#">Item 2</a></li>
-					<li><a href="#">Item 3</a></li>
 					<li class="divider"></li>
 					<li class="dropdown-header">Mais...</li>
 					<li><a href="#">Dicas <span class="caret"></span></a>
