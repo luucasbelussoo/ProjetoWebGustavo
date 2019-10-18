@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.upf.projeto.beans.Cidade;
 import br.com.upf.projeto.beans.Usuario;
@@ -35,6 +36,7 @@ public class UsuarioServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		Usuario usuario = new Usuario();
 		List<Usuario> usuarios = new ArrayList<>();
 		GenericDAO<Usuario> dao = new GenericDAO<>(Usuario.class);
 		GenericDAO<Cidade> daoCidade = new GenericDAO<>(Cidade.class);
@@ -56,12 +58,8 @@ public class UsuarioServlet extends HttpServlet {
 			// fazer operacão
 			Usuario p = new Usuario(
 					request.getParameter("id").trim().isEmpty() ? null : Integer.parseInt(request.getParameter("id")),
-					request.getParameter("nome"),
-					request.getParameter("login"),
-					request.getParameter("senha"),
-					request.getParameter("endereco"),
-					request.getParameter("telefone"),
-					request.getParameter("cpf"),
+					request.getParameter("nome"), request.getParameter("login"), request.getParameter("senha"),
+					request.getParameter("endereco"), request.getParameter("telefone"), request.getParameter("cpf"),
 					new Cidade(request.getParameter("cidade").trim().isEmpty() ? null
 							: Integer.parseInt(request.getParameter("cidade"))));
 
@@ -85,7 +83,7 @@ public class UsuarioServlet extends HttpServlet {
 				request.setAttribute("erro", "O endereço é obrigatório!");
 				abrir = "FormUsuario.jsp";
 				request.setAttribute("usuario", p);
-			} 
+			}
 			if (p.getTelefone().length() <= 0) {
 				request.setAttribute("erro", "O telefone é obrigatório!");
 				abrir = "FormUsuario.jsp";
@@ -113,11 +111,12 @@ public class UsuarioServlet extends HttpServlet {
 			abrir = "ListUsuario.jsp";
 			break;
 		}
+		
 		case "alterar":
 			try {
 				Usuario p = dao.getInstancia(Integer.parseInt(request.getParameter("id")));
 				request.setAttribute("usuario", p); // colocar na requisição para
-														// o JSP usar
+													// o JSP usar
 				abrir = "FormUsuario.jsp";
 			} catch (Exception e) {
 				request.setAttribute("erro", e.getMessage());

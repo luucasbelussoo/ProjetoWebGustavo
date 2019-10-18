@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.com.upf.projeto.beans.Usuario;
 import br.com.upf.projeto.jpa.JPAFactory;
 
 public class GenericDAO<T> implements InterfaceDAO<T> {
@@ -97,4 +98,19 @@ public class GenericDAO<T> implements InterfaceDAO<T> {
 
 	}
 
+	public boolean existe(String testeLogin, String testeSenha) {
+		EntityManager em = JPAFactory.getEntityManager();
+		List<T> ret = (List<T>) em.createQuery("from usuario where login = "+ testeLogin + "senha = " + testeSenha); 
+
+		if (ret != null) {
+			return true;
+		}else {
+			return false;
+		}
+		
+		
+		
+	}
+
+	
 }
